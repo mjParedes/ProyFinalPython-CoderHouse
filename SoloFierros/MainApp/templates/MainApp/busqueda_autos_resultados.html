@@ -1,0 +1,11 @@
+{% extends "MainApp/index.html" %}
+
+{% block buscar %}
+
+<ul>
+    {% for auto in automovil %}
+    <li> {{auto.modelo}} - {{auto.marca}} - {{auto.modelo}} - {{auto.origen}} - {{auto.fecha_fabricacion}} - {{auto.descripcion}} - {{auto.precio}} </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

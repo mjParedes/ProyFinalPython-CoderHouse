@@ -81,7 +81,7 @@ ul, ol {
 .container {
 	width:100%;
 }
-#search-form label {
+#search-form p {
 	color:#fff;
 	font-size:16px;
 	line-height:1.2em;
@@ -97,7 +97,7 @@ ul, ol {
 	padding:4px 3px 4px 3px;
 	margin-right:12px;
 }
-#search-form .link1 {
+#search-form input .link1 {
 	position:relative;
 	top:-2px;
 }
