@@ -8,4 +8,3 @@ class Registrar(models.Model):
 
     def __str__(self):
         return f"{self.nombre_usuario} || {self.email_usuario}"
-
