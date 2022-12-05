@@ -4,7 +4,6 @@ from django.db import models
 class Automovil(models.Model):
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
-    origen = models.CharField(max_length=50)
     fecha_fabricacion = models.DateField()
     descripcion = models.TextField(max_length=1000)
     precio = models.IntegerField()
@@ -17,7 +16,6 @@ class Automovil(models.Model):
 class Moto(models.Model):
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
-    origen = models.CharField(max_length=50)
     fecha_fabricacion = models.DateField()
     descripcion = models.TextField(max_length=1000)
     precio = models.IntegerField()
