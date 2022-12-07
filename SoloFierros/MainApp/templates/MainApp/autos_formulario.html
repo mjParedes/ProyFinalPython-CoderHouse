@@ -5,7 +5,8 @@
 
     <h3 style="margin: 25px;">AUTOS</h3>
     
-    <form action="" method="post">
+    <form action="{% url 'autos' %}" method="post">
+
         {% csrf_token%}
         <p>
 
@@ -13,7 +14,7 @@
 
         </p>
 
-        <input style="padding: 4px; margin: 10px;" type="submit" value="CREAR">
+        <input style="padding: 4px; margin: 10px;" type="submit" value="Añadir">
 
     </form>
 

@@ -1,0 +1,29 @@
+{% extends "MainApp/index.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+    <div class="indent">
+      <div class="wrapper">
+        <div class="col-1">
+          <h3 style="margin-top: 35px;"><b>Nuestras</b> Motos</h3>
+          <ul class="list">
+
+
+              {% for motos in object_list %}
+              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" /><a href="#">{{motos}}</a><br/>{{motos.descripcion}} <a href="#">Ver más</a></li><br>
+              {% endfor %}
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <p><a href="{% url 'motos-nuevo' %}"> Agregar nueva moto </a></p>
+  
+
+{% endblock %}

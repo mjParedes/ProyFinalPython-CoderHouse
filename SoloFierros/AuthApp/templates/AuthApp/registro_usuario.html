@@ -1,0 +1,22 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+            
+{% if error %}
+
+<h3 style="color: red;"> Errores en el registro de usuario: {{errors}}</h3>
+
+{% endif %}
+
+<form method="post" style="margin-top: 70px ;">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Registrar usuario">
+
+</form>
+
+<p> Ya tenes cuenta? <a href="#"> Inicia sesion </a></p>
+
+
+{% endblock %}

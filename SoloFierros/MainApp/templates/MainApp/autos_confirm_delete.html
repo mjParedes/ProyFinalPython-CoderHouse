@@ -1,0 +1,24 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <p>
+        Estas seguro que queres borrar el siguiente articulo "{{object.modelo}} - {{object.marca}}"?
+        <input type="subtim" value="Si">
+    </p>
+
+    <a href="{% url 'autos' %}">Volver al catálogo</a>
+
+
+
+
+
+
+
+
+
+</form>
+{% endblock %}

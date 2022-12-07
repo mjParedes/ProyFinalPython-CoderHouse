@@ -31,9 +31,23 @@
         <div class="fleft"><a href="#"><img src="{% static 'MainApp/images/logo-page.png' %}" alt="" /></a></div>
         <div class="fright">
           <ul>
-            <li><a href="#"><img src="{% static 'MainApp/images/icon1-act.gif' %}" alt="" /></a></li>
-            <li><a href="#"><img src="{% static 'MainApp/images/icon2.gif' %}" alt="" /></a></li>
-            <li><a href="#"><img src="{% static 'MainApp/images/icon3.gif' %}" alt="" /></a></li>
+
+            
+
+            
+            <li>
+              {% if request.usuario.is_authenticated %}
+              <a class="btn btn-primary" href="#"> Logout </a>
+              <a class="btn btn-primary" href="#"> Perfil </a>
+              <p> Bienvenido {{request.usuario.username}} !</p>
+              {% else %}
+              <a class="btn btn-primary" href="{% url 'auth-registro'  %}"> Login</a>
+              
+              {% endif %}
+            </li>
+
+
+
           </ul>
         </div>
       </div>
@@ -44,7 +58,7 @@
             <li><a href="{% url 'nosotros' %}"><span>nosotros</span></a></li>
             <li><a href="{% url 'autos' %}"><span>autos</span></a></li>
             <li><a href="{% url 'motos' %}"><span>motos</span></a></li>
-            <li><a href="#"><span>sucursales</span></a></li>
+            <li><a href=""><span>sucursales</span></a></li>
             <li class="last"><a href="#"><span>trucks</span></a></li>
 
 
@@ -56,17 +70,14 @@
           <h2>Calidad y confianza<b>solo aqui</b></h2>
           <p>Encontra la mayor variedad automotor del pais, con precios asequibles y garantia asegurada, porque VOS sos lo que mas nos importa.</p>
 
-            {% block buscar %}
+          <form action="" method="get">
 
-          <form action="{url 'busqueda-autos-resultados'}" id="search-form" method="get">
-            <fieldset>
-              <p>Search:</p>
-              <input type="text" name="nombre_objeto">
-              <a href="{url 'busqueda-autos-resultados'}" class="link1"><em><b>Go!</b></em></a>
-            </fieldset>
-          </form>
-
-          {% endblock %}
+            <p> 
+                <input type="text" name="nombre_auto">
+                <input type="submit" value="Buscar">
+            </p>
+        
+        </form>
 
         </div>
       </div>
