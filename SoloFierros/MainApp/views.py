@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from MainApp.models import *
 from MainApp.forms import AutosFormulario, MotosFormulario
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -9,6 +11,7 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 def vista_inicio(request):
     return render(request, "MainApp/index.html")
 
+@login_required
 def vista_nosotros(request):
     return render(request, "MainApp/about.html")
 
@@ -36,6 +39,7 @@ def autos_formulario(request):
         formulario = AutosFormulario() 
 
     return render(request, "MainApp/autos_formulario.html", {"formulario":formulario})
+
 
 class Autos(ListView):
 

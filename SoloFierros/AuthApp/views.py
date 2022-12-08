@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from AuthApp.models import *
 from AuthApp.forms import FormularioDeRegistro, EditarUsuario, AvatarUsuario
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, authenticate
+
+
 
 # Create your views here.
 
@@ -81,5 +85,31 @@ def agregar_avatar(request):
     formulario = AvatarUsuario()
     return render(request, "AuthApp/agregar_avatar.html", {"form": formulario})
     
+
+
+def iniciar_sesion(request):
+
+    errors = ""
+
+    if request.method == "POST":
+        formulario = AuthenticationForm(request, data = request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            user = authenticate(username = data["username"], password = data["password"])
+
+            if user is not None:
+                login(request, user)
+                return redirect("inicio")
+
+            else: 
+                return render(request, "AuthApp/login.html", {"form": formulario, "errors": "Credenciales invalidas"})
+
+        else:
+              return render(request, "AuthApp/login.html", {"form": formulario, "errors": formulario.errors})
+    
+    formulario = AuthenticationForm
+    return render(request, "AuthApp/login.html", {"form": formulario, "errors": errors})
 
 # Create your views here.

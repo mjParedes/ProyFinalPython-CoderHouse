@@ -8,7 +8,7 @@
 
 {% endif %}
 
-<form method="post" style="margin-top: 70px ;">
+<form method="post" style="margin-top: 90px ;">
 
     {% csrf_token %}
     {{ form.as_p }}
@@ -16,7 +16,7 @@
 
 </form>
 
-<p> Ya tenes cuenta? <a href="#"> Inicia sesion </a></p>
+<p> Ya tenes cuenta? <a href="{% url 'auth-login'%}"> Inicia sesion </a></p>
 
 
 {% endblock %}
