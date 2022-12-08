@@ -39,8 +39,8 @@
               {% if request.user.is_authenticated %} 
             
             <li>
-              <a class="btn btn-primary" href="{% url 'inicio'  %}"> Logout </a>
-              <a class="btn btn-primary" href="#"> Perfil </a>
+              <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Logout </a>
+              <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
               <p> Bienvenido {{request.user.username}} !</p>
               {% else %}
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>

@@ -42,8 +42,8 @@ def editar_usuario(request):
 
             data = formulario.cleaned_data
             usuario.email = data["email"]
-            usuario.nombre = data["nombre"]
-            usuario.apellido = data["apellido"]
+            usuario.first_name = data["first_name"]
+            usuario.last_name = data["last_name"]
 
             usuario.save()
 
@@ -55,7 +55,7 @@ def editar_usuario(request):
 
     else:
 
-        formulario = EditarUsuario(initial={"email": usuario.email, "nombre": usuario.nombre, "apellido": usuario.apellido})
+        formulario = EditarUsuario(initial={"email": usuario.email, "first_name": usuario.first_name, "last_name": usuario.last_name})
     
     return render (request, "AuthApp/editar_usuario.html", {"form": formulario})
         

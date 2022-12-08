@@ -1,0 +1,19 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+
+
+{% if errors %}
+    <p style="color:red">{{errors}}</p>
+{% endif %}
+
+<form method="post" style="margin-top: 90px ;">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+
+</form>
+
+{% endblock %}
