@@ -35,16 +35,19 @@
             
 
             
+          
+              {% if request.user.is_authenticated %} 
+            
             <li>
-              {% if request.usuario.is_authenticated %}
-              <a class="btn btn-primary" href="#"> Logout </a>
-              <a class="btn btn-primary" href="#"> Perfil </a>
-              <p> Bienvenido {{request.usuario.username}} !</p>
+              <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Logout </a>
+              <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
+              <p> Bienvenido {{request.user.username}} !</p>
               {% else %}
-              <a class="btn btn-primary" href="{% url 'auth-registro'  %}"> Login</a>
+              <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>
+            </li>
               
               {% endif %}
-            </li>
+            
 
 
 
