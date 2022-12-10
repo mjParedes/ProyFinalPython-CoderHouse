@@ -13,7 +13,7 @@
 
               {% for autos in object_list %}
               <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
-                  <a href="#">{{autos}}</a><br/>{{autos.descripcion}} <a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
+                  <a href="#">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
                   <a href="{% url 'autos-borrar' autos.id%}">Borrar</a> //
                   <a href="{% url 'autos-editar' autos.id%}">Actualizar</a>
 

@@ -8,7 +8,7 @@
 
 {% endif %}
 
-<form method="post" style="margin-top: 90px ;">
+<form action="{% url 'auth-login'%}" method="post" style="margin-top: 90px ;">
 
     {% csrf_token %}
     {{ form.as_p }}

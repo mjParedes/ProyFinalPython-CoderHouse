@@ -62,9 +62,7 @@
             <li><a href="{% url 'autos' %}"><span>autos</span></a></li>
             <li><a href="{% url 'motos' %}"><span>motos</span></a></li>
             <li><a href=""><span>sucursales</span></a></li>
-            <li class="last"><a href="#"><span>trucks</span></a></li>
-
-
+            <li><a href="#"><span>trucks</span></a></li>
           </ul>
         </div>
       </div>
@@ -86,7 +84,7 @@
       </div>
 
           
-      <div class="extra"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" /></div>
+      <div class="extra" style="height: 10px;"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" style="padding: 0"></div>
     </div>
 
     {% block contenido %}
@@ -114,10 +112,10 @@
       <div class="footer-nav">
         <div class="left">
           <ul>
-            <li><a href="{% url 'inicio'  %}">Home</a></li>
-            <li><a href="{% url 'nosotros' %}">About</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="{% url 'inicio'  %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a href="{% url 'autos' %}">Autos</a></li>
+            <li><a href="{% url 'motos' %}">Motos</a></li>
             <li class="last"><a href="#">Sitemap</a></li>
           </ul>
         </div>

@@ -28,8 +28,6 @@ def registrar_usuario(request):
     return render(request, "AuthApp/registro_usuario.html", {"form": formulario})
 
 
-@login_required
-
 def editar_usuario(request):
 
     usuario = request.user

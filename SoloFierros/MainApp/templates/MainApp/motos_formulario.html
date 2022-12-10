@@ -4,7 +4,7 @@
 {% block contenido %}
     <h3 style="margin: 25px;">MOTOS</h3>
 
-    <form action="" method="post">
+    <form action="{% url 'nosotros' %}" method="post">
         {% csrf_token%}
         <p>
 
