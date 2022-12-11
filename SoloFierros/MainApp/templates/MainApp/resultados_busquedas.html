@@ -1,0 +1,48 @@
+{% extends "MainApp/index.html" %}
+
+{% load static %}
+
+
+
+{% block contenido %}
+
+    <div class="indent">
+      <div class="wrapper">
+        <div class="col-1">
+          <h3 style="margin-top: 35px;"><b>Nuestros</b> Autos</h3>
+          <ul class="list">
+
+
+              {% for autos in auto %}
+              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
+                  <a href="#">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
+                  <a href="{% url 'autos-borrar' autos.id%}">Borrar</a> //
+                  <a href="{% url 'autos-editar' autos.id%}">Actualizar</a>
+
+              </li>
+
+              {% endfor %}
+              {% for motos in moto %}
+              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
+                <a href="#">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
+                <a href="{% url 'moto-borrar' motos.id%}">Borrar</a> //
+                <a href="{% url 'moto-editar' motos.id%}">Actualizar</a>
+
+            </li>
+
+
+              {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <p><a href="{% url 'autos' %}"> Volver al catálogo </a></p>
+  
+
+{% endblock %}
+
+

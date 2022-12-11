@@ -21,4 +21,10 @@ urlpatterns = [
     
 
 
+
+
+
+    path("buscar/resultados/", resultado_busqueda, name="buscar-resultados"),
+
+
 ]

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from MainApp.models import *
 from MainApp.forms import AutosFormulario, MotosFormulario
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
@@ -11,7 +11,6 @@ from django.contrib.auth.decorators import login_required
 
 def vista_inicio(request):
     return render(request, "MainApp/index.html")
-
 
 def vista_nosotros(request):
     return render(request, "MainApp/about.html")
@@ -41,12 +40,10 @@ def autos_formulario(request):
         contexto = {"formulario": formulario}
     return render(request, "MainApp/autos_formulario.html", contexto)
 
-
 class Autos( LoginRequiredMixin, ListView):
 
     model = Automovil
     template_name = "MainApp/autos.html"
-
 
 def borrar_auto(request, id):
     auto = Automovil.objects.get(id=id)
@@ -83,7 +80,7 @@ def editar_autos(request, id):
 
         return render(request, "MainApp/editar_autos.html", {"formulario": formulario, "errores": ""})
 
-class AutosDetail(DetailView):
+class AutosDetail(DetailView, LoginRequiredMixin):
 
     model = Automovil
     template_name = "MainApp/autos_detail.html"
@@ -160,3 +157,14 @@ def borrar_moto(request, id):
     moto.delete()
 
     return redirect("motos")
+
+
+
+@login_required
+def resultado_busqueda(request):
+
+    marca_auto = request.GET["vehiculo"]
+    autos = Automovil.objects.filter(marca__icontains=marca_auto)
+    motos = Moto.objects.filter(marca__icontains=marca_auto)
+
+    return render(request, "MainApp/resultados_busquedas.html", {"auto": autos, "moto": motos})

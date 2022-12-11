@@ -39,9 +39,9 @@
               {% if request.user.is_authenticated %} 
             
             <li>
-              <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Logout </a>
+              <a class="btn btn-primary" href="{% url 'auth-login'  %}" style="margin: 0 5px;"> Logout </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
-              <p> Bienvenido {{request.user.username}} !</p>
+              <h5 style="font-size: 12px;"> Bienvenido {{request.user.username}} !</h5>
               {% else %}
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>
             </li>
@@ -71,10 +71,10 @@
           <h2>Calidad y confianza<b>solo aqui</b></h2>
           <p>Encontra la mayor variedad automotor del pais, con precios asequibles y garantia asegurada, porque VOS sos lo que mas nos importa.</p>
 
-          <form action="" method="get">
+          <form action="{% url 'buscar-resultados' %}" method="get">
 
             <p> 
-                <input type="text" name="nombre_auto">
+                <input type="text" name="vehiculo">
                 <input type="submit" value="Buscar">
             </p>
         
@@ -84,7 +84,7 @@
       </div>
 
           
-      <div class="extra" style="height: 10px;"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" style="padding: 0"></div>
+      <div class="extra"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" style="padding: 0"></div>
     </div>
 
     {% block contenido %}
