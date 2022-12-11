@@ -40,7 +40,7 @@ def autos_formulario(request):
         contexto = {"formulario": formulario}
     return render(request, "MainApp/autos_formulario.html", contexto)
 
-class Autos( LoginRequiredMixin, ListView):
+class Autos(LoginRequiredMixin, ListView):
 
     model = Automovil
     template_name = "MainApp/autos.html"
@@ -80,7 +80,7 @@ def editar_autos(request, id):
 
         return render(request, "MainApp/editar_autos.html", {"formulario": formulario, "errores": ""})
 
-class AutosDetail(DetailView, LoginRequiredMixin):
+class AutosDetail(DetailView):
 
     model = Automovil
     template_name = "MainApp/autos_detail.html"
@@ -113,7 +113,7 @@ def motos_formulario(request):
 
     return render(request, "MainApp/motos.html", {"formulario":formulario})
 
-class Motos(ListView):
+class Motos(LoginRequiredMixin, ListView):
 
     model = Moto
     template_name = "MainApp/motos.html"
@@ -157,6 +157,9 @@ def borrar_moto(request, id):
     moto.delete()
 
     return redirect("motos")
+
+
+
 
 
 
