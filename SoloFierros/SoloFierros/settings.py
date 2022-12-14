@@ -125,15 +125,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
-# URL para el LOGIN
-LOGIN_URL  = "/main/login/"
-
 # Configuraciones MEDIA 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/imagenes")
 
-=======
-
 LOGIN_URL = "/auth/login/"
->>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50
