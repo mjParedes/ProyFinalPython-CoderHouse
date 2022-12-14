@@ -11,9 +11,16 @@
           <ul class="list">
 
 
-              {% for motos in object_list %}
-              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" /><a href="#">{{motos}}</a><br/>{{motos.descripcion}} <a href="#">Ver más</a></li><br>
-              {% endfor %}
+
+            {% for motos in object_list %}
+            <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
+                <a href="#">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
+                <a href="{% url 'moto-borrar' motos.id%}">Borrar</a> //
+                <a href="{% url 'moto-editar' motos.id%}">Actualizar</a>
+
+            </li>
+
+            {% endfor %}
 
           </ul>
         </div>

@@ -135,7 +135,7 @@ ul, ol {
 #login-form .field1 a {
 	text-decoration:none;
 	display:inline-block;
-	float:right;
+	/*float:right;*/
 	color:#35b3d8;
 	cursor:pointer;
 	margin-top:-4px;
@@ -344,7 +344,7 @@ h3 b, h4 b {
 	font-size:16px;
 	text-decoration:none;
 	color:#fff;
-	float:left;
+	/*float:left;*/
 	text-transform:uppercase;
 	display:inline-block;
 	cursor:pointer;
@@ -600,3 +600,30 @@ h3 b, h4 b {
 a {
 	outline:none;
 }
+
+
+form{
+	font-size: 18px;
+	margin: 40px 0;
+	display: block;
+  }
+
+label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+textarea{
+  width: 435px;
+  height: 100px;
+}
+
+
+.input_form{
+	padding: 5px 15px;
+	display: block;
+	width: 205px;
+	font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	cursor: pointer;
+  }

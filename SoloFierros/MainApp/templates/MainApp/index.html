@@ -39,11 +39,15 @@
               {% if request.user.is_authenticated %} 
             
             <li>
-              <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Logout </a>
+              <a class="btn btn-primary" href="{% url 'auth-logout'  %}" style="margin: 0 5px;"> Logout </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
+<<<<<<< HEAD
               <!-- <img height="40px" src="{{imagen_url}}" alt=""> -->
               <p> Bienvenido {{request.user.username}} !</p>
 
+=======
+              <h5 style="font-size: 12px;"> Bienvenido {{request.user.username}} !</h5>
+>>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50
               {% else %}
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>
             </li>
@@ -64,9 +68,7 @@
             <li><a href="{% url 'autos' %}"><span>autos</span></a></li>
             <li><a href="{% url 'motos' %}"><span>motos</span></a></li>
             <li><a href=""><span>sucursales</span></a></li>
-            <li class="last"><a href="#"><span>trucks</span></a></li>
-
-
+            <li><a href="#"><span>trucks</span></a></li>
           </ul>
         </div>
       </div>
@@ -75,10 +77,10 @@
           <h2>Calidad y confianza<b>solo aqui</b></h2>
           <p>Encontra la mayor variedad automotor del pais, con precios asequibles y garantia asegurada, porque VOS sos lo que mas nos importa.</p>
 
-          <form action="" method="get">
+          <form action="{% url 'buscar-resultados' %}" method="get">
 
             <p> 
-                <input type="text" name="nombre_auto">
+                <input type="text" name="vehiculo">
                 <input type="submit" value="Buscar">
             </p>
         
@@ -88,7 +90,7 @@
       </div>
 
           
-      <div class="extra"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" /></div>
+      <div class="extra"><img src="{% static 'MainApp/images/header-img.png' %}" alt="" style="padding: 0"></div>
     </div>
 
     {% block contenido %}
@@ -116,10 +118,10 @@
       <div class="footer-nav">
         <div class="left">
           <ul>
-            <li><a href="{% url 'inicio'  %}">Home</a></li>
-            <li><a href="{% url 'nosotros' %}">About</a></li>
-            <li><a href="#">Articles</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="{% url 'inicio'  %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a href="{% url 'autos' %}">Autos</a></li>
+            <li><a href="{% url 'motos' %}">Motos</a></li>
             <li class="last"><a href="#">Sitemap</a></li>
           </ul>
         </div>

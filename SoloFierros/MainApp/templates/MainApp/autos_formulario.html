@@ -5,16 +5,17 @@
 
     <h3 style="margin: 25px;">AUTOS</h3>
     
-    <form action="{% url 'autos' %}" method="post">
+    <form action="" method="post">
 
         {% csrf_token%}
-        <p>
+
+        <p class="form">
 
             {{ formulario.as_p }}
 
         </p>
 
-        <input style="padding: 4px; margin: 10px;" type="submit" value="Añadir">
+        <input style="padding: 4px;" type="submit" value="Añadir" class="input_form">
 
     </form>
 

@@ -1,5 +1,7 @@
 {% extends "MainApp/index.html" %}
+
 {% load static %}
+
 
 
 {% block contenido %}
@@ -11,7 +13,7 @@
           <ul class="list">
 
 
-              {% for autos in object_list %}
+              {% for autos in auto %}
               <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
                   <a href="#">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
                   <a href="{% url 'autos-borrar' autos.id%}">Borrar</a> //
@@ -20,7 +22,16 @@
               </li>
 
               {% endfor %}
+              {% for motos in moto %}
+              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
+                <a href="#">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
+                <a href="{% url 'moto-borrar' motos.id%}">Borrar</a> //
+                <a href="{% url 'moto-editar' motos.id%}">Actualizar</a>
 
+            </li>
+
+
+              {% endfor %}
           </ul>
         </div>
 
@@ -29,7 +40,9 @@
 
 
 
-    <p><a href="{% url 'autos-nuevo' %}"> Agregar nuevo auto </a></p>
+    <p><a href="{% url 'autos' %}"> Volver al catálogo </a></p>
   
 
 {% endblock %}
+
+
