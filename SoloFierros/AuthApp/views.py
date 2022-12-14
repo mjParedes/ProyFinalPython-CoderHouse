@@ -59,8 +59,8 @@ def editar_usuario(request):
     
     return render (request, "AuthApp/editar_usuario.html", {"form": formulario})
         
+        
 @login_required
-
 def agregar_avatar(request):
 
     if request.method == "POST":

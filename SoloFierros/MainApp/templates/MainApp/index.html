@@ -26,9 +26,9 @@
 <body id="page1">
   <!-- START PAGE SOURCE -->
   <div id="main">
-    <div id="header">
+    <div id="header" style="margin-bottom: 100px;">
       <div class="row-1">
-        <div class="fleft"><a href="#"><img src="{% static 'MainApp/images/logo-page.png' %}" alt="" /></a></div>
+        <div class="fleft"><a href="{% url 'inicio'%}"><img src="{% static 'MainApp/images/logo-page.png' %}" alt="" /></a></div>
         <div class="fright">
           <ul>
 
@@ -41,7 +41,9 @@
             <li>
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Logout </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
+              <!-- <img height="40px" src="{{imagen_url}}" alt=""> -->
               <p> Bienvenido {{request.user.username}} !</p>
+
               {% else %}
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>
             </li>

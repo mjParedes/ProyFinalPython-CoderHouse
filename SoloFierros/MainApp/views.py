@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from MainApp.models import *
+from AuthApp.models import *
 from MainApp.forms import AutosFormulario, MotosFormulario
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
@@ -9,7 +10,15 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def vista_inicio(request):
+    # if request.user.is_authenticated:
+    #     imagen_model = Avatar.objects.filter(user= request.user.id).order_by("-id")[0]
+    #     imagen_url = imagen_model.imagen.url
+    # else:
+    #     imagen_url = ""
+    # return render(request, "MainApp/index.html", {"imagen_url": imagen_url})
+
     return render(request, "MainApp/index.html")
+
 
 @login_required
 def vista_nosotros(request):
