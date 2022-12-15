@@ -9,22 +9,24 @@
     <div class="indent">
       <div class="wrapper">
         <div class="col-1">
-          <h3 style="margin-top: 35px;"><b>Nuestros</b> Autos</h3>
+          <h3 style="margin-top: 70px;"></h3>
           <ul class="list">
 
 
               {% for autos in auto %}
-              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
-                  <a href="#">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
+              <li><img src="{{autos.imagen.url}}" style="height: 150px;"/>
+                <div style="margin-left: 220px; display: block;">
+                  <a href="{% url 'autos-detail' autos.id %}">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
                   <a href="{% url 'autos-borrar' autos.id%}">Borrar</a> //
                   <a href="{% url 'autos-editar' autos.id%}">Actualizar</a>
+                </div>
 
               </li>
 
               {% endfor %}
               {% for motos in moto %}
-              <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
-                <a href="#">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
+              <li><img src="{{motos.imagen.url}}" style="height: 150px;"/>
+                <a href="{% url 'motos-detail' motos.id %}">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
                 <a href="{% url 'moto-borrar' motos.id%}">Borrar</a> //
                 <a href="{% url 'moto-editar' motos.id%}">Actualizar</a>
 

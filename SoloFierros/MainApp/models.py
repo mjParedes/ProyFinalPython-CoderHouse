@@ -7,7 +7,7 @@ class Automovil(models.Model):
     fecha_fabricacion = models.DateField()
     descripcion = models.TextField(max_length=1000)
     precio = models.IntegerField()
-    #imagen = models.FileField()
+    imagen = models.FileField(upload_to='images', null=True)
 
     def __str__(self):
         return f"{self.marca} -  {self.modelo}"
@@ -19,7 +19,7 @@ class Moto(models.Model):
     fecha_fabricacion = models.DateField()
     descripcion = models.TextField(max_length=1000)
     precio = models.IntegerField()
-    # imagen = models.ImageField()
+    imagen = models.FileField(upload_to='images', null=True)
 
     def __str__(self):
         return f"{self.marca} -  {self.modelo}"
@@ -32,5 +32,4 @@ class Sucursal(models.Model):
 
     def __str__(self):
         return f"Sucursal: {self.nombre}"
-
 

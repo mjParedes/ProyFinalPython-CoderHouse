@@ -8,7 +8,7 @@ class AutosFormulario(forms.Form):
     fecha_fabricacion = forms.DateField()
     descripcion = forms.CharField(widget=forms.Textarea)
     precio = forms.IntegerField()
-    #imagen = forms.ImageField()
+    imagen = forms.FileField()
 
 
 class MotosFormulario(forms.Form):
@@ -17,5 +17,4 @@ class MotosFormulario(forms.Form):
     fecha_fabricacion = forms.DateField()
     descripcion = forms.CharField(widget=forms.Textarea)
     precio = forms.IntegerField()
-
-
+    imagen = forms.FileField()

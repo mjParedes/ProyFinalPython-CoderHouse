@@ -13,10 +13,13 @@
 
 
             {% for motos in object_list %}
-            <li><img src="{% static 'MainApp/images/3page-img1.jpg' %}" alt="" />
-                <a href="#">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
+            <li><img src="{{motos.imagen.url}}" style="height: 150px;" />
+
+              <div style="margin-left: 250px; display: block;">
+                <a href="{% url 'motos-detail' motos.id %}">{{motos}}</a><br/>{{motos.descripcion}} <br><a href="{% url 'motos-detail' motos.id %}">Ver más</a> //
                 <a href="{% url 'moto-borrar' motos.id%}">Borrar</a> //
                 <a href="{% url 'moto-editar' motos.id%}">Actualizar</a>
+              </div>
 
             </li>
 
@@ -28,7 +31,7 @@
       </div>
     </div>
 
-
+<br>
 
     <p><a href="{% url 'motos-nuevo' %}"> Agregar nueva moto </a></p>
   

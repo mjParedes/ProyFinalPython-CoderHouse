@@ -20,11 +20,11 @@ def vista_inicio(request):
 
     return render(request, "MainApp/index.html")
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
 @login_required
-=======
->>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50
+#=======
+#>>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50
 def vista_nosotros(request):
     return render(request, "MainApp/about.html")
 
@@ -42,7 +42,7 @@ def autos_formulario(request):
                 fecha_fabricacion = data["fecha_fabricacion"],
                 descripcion = data["descripcion"],
                 precio = data["precio"],
-                #imagen = data["imagen"],
+                imagen = data["imagen"],
             )
 
             auto.save()
@@ -50,8 +50,8 @@ def autos_formulario(request):
 
     else:
         formulario = AutosFormulario() 
-        contexto = {"formulario": formulario}
-    return render(request, "MainApp/autos_formulario.html", contexto)
+
+    return render(request, "MainApp/autos_formulario.html", {"formulario": formulario})
 
 class Autos(LoginRequiredMixin, ListView):
 
@@ -116,6 +116,8 @@ def motos_formulario(request):
                 fecha_fabricacion = data["fecha_fabricacion"],
                 descripcion = data["descripcion"],
                 precio = data["precio"],
+                imagen = data["imagen"],
+
             )
 
             moto.save()

@@ -4,13 +4,15 @@
 
 
 <br>
-<h1> Detalles del auto</h1>
+<h1> Detalles de la moto</h1>
 <br>
+<img src="{{object.imagen.url}}" alt="" style="width: 40%; margin-bottom: 40px  ;"><br>
+
 <p>Modelo: {{object.modelo}}</p>
 <p>Marca: {{object.marca}}</p>
 <p>Fecha de fabricacion: {{object.fecha_fabricacion}}</p>
 <p>Descripcion: {{object.descripcion}}</p>
-<p>Precio: {{object.precio}}</p>
+<p>Precio: $ {{object.precio}}</p>
 
 
 {% endblock %}
