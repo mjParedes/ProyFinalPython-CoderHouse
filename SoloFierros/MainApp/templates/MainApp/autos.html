@@ -15,7 +15,7 @@
               
               <li><div><img src="{{autos.imagen.url}}" style="height: 150px;" /></div>
               
-                <div style="margin-left: 220px; display: block;">
+                <div style="margin-left: 220px;">
                   <a href="{% url 'autos-detail' autos.id %}">{{autos}}</a><br/>{{autos.descripcion}} <br><a href="{% url 'autos-detail' autos.id %}">Ver más</a> //
                   <a href="{% url 'autos-borrar' autos.id%}">Borrar</a> //
                   <a href="{% url 'autos-editar' autos.id%}">Actualizar</a>

@@ -1,0 +1,33 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+
+<div class="indent">
+    <div class="wrapper">
+      <div class="col-1">
+        <h3 style="margin: 35px 0;"><b>Nuestras</b> Sucursales</h3>
+        <ul class="list">
+
+
+            {% for sucursal in object_list %}
+            
+            
+              <div >
+
+                <p style="margin-bottom: 40px;" > Sucursal {{sucursal.nombre}} -  {{sucursal.direccion}} -  {{sucursal.telefono}} -  {{sucursal.localidad}}</p>              
+
+                </div>
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

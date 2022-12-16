@@ -22,6 +22,12 @@ def vista_inicio(request):
 
 #<<<<<<< HEAD
 
+class Sucursales(LoginRequiredMixin, ListView):
+
+    model = Sucursal
+    template_name = "MainApp/sucursales.html"
+
+
 @login_required
 #=======
 #>>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50
@@ -42,7 +48,7 @@ def autos_formulario(request):
                 fecha_fabricacion = data["fecha_fabricacion"],
                 descripcion = data["descripcion"],
                 precio = data["precio"],
-                imagen = data["imagen"],
+                #imagen = data["imagen"],
             )
 
             auto.save()
