@@ -18,6 +18,8 @@ Citando un ejemplo, nos dividimos en partes iguales la creacion de modelos, vist
 
 ## VIDEO CON NAVEGACION DE LA APLICACION WEB
 
+<a href="https://photos.app.goo.gl/seaXgNGUWmkFw9sd9">VER VIDEO
+
 
 <<<<<<< HEAD
 =======

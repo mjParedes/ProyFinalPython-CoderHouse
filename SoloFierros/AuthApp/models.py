@@ -16,3 +16,10 @@ class Avatar(models.Model):
 
     usuario = models.ForeignKey(User,on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to= "avatares", null=True, blank=True)
+
+
+class Mensajes(models.Model):
+    autor = models.CharField(max_length=50)
+    mensaje = models.TextField(max_length=1000)
+    fecha = models.DateField(null=True)
+    destinatario = models.CharField(max_length=50)

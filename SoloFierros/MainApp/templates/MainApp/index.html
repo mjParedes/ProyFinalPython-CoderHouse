@@ -39,7 +39,7 @@
               {% if request.user.is_authenticated %} 
             
             <li>
-              <a class="btn btn-primary" href="#" style="margin: 0 5px 0 10px;"> Mensajes </a>
+              <a class="btn btn-primary" href="{% url 'auth-messages' %}" style="margin: 0 5px 0 10px;"> Mensajes </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
 
               <a class="btn btn-primary" href="{% url 'auth-logout'  %}" style="margin: 0 5px;"> Logout </a>

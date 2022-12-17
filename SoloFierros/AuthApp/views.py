@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from AuthApp.models import *
-from AuthApp.forms import FormularioDeRegistro, EditarUsuario, AvatarUsuario
+from AuthApp.forms import FormularioDeRegistro, EditarUsuario, AvatarUsuario, MensajesFormulario
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
+from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -109,5 +111,39 @@ def iniciar_sesion(request):
     
     formulario = AuthenticationForm
     return render(request, "AuthApp/login.html", {"form": formulario, "errors": errors})
+
+
+
+class mensajes(LoginRequiredMixin, ListView):
+
+    model = Mensajes
+    template_name = "AuthApp/mensajes.html"
+
+
+
+def mensajes_formulario(request):
+    if request.method == "POST":
+        formulario = MensajesFormulario(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            mensaje = Mensajes(
+                
+                autor = data["autor"],
+                mensaje = data["mensaje"],
+                fecha = data["fecha"],
+                destinatario = data["destinatario"],
+                
+            )
+
+            mensaje.save()
+            return render(request,"AuthApp/mensajes.html")
+
+    else:
+        formulario = MensajesFormulario() 
+
+    return render(request, "AuthApp/mensajes_formulario.html", {"formulario": formulario})
+
 
 # Create your views here.

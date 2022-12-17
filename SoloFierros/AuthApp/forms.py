@@ -35,3 +35,11 @@ class EditarUsuario(UserCreationForm):
 class AvatarUsuario(forms.Form):
     
     imagen = forms.ImageField()
+
+
+class MensajesFormulario(forms.Form):
+    autor = forms.CharField(max_length=50)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    fecha = forms.DateField()
+    destinatario = forms.CharField(max_length=50)
+

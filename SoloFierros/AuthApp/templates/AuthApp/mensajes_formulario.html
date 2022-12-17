@@ -1,0 +1,22 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+
+<h3 style="margin: 25px;">MENSAJES</h3>
+    
+    <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token%}
+
+        <p class="form">
+
+            {{ formulario.as_p }}
+
+        </p>
+
+        <input style="padding: 4px;" type="submit" value="Añadir" class="input_form">
+
+    </form>
+
+
+{% endblock%}

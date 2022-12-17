@@ -10,6 +10,8 @@ urlpatterns = [
     path("accounts/profile/avatar", agregar_avatar, name="auth-avatar"),
     path("accounts/login/", iniciar_sesion, name="auth-login"),
     path("logout/", LogoutView.as_view(template_name="AuthApp/logout.html"), name="auth-logout"),
+    path("messages/", mensajes.as_view(), name="auth-messages"),
+    path("messages/form/", mensajes_formulario , name="auth-messages-form"),
 
 
 ]
