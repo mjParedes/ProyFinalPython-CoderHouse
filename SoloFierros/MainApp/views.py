@@ -11,14 +11,13 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def vista_inicio(request):
-    # if request.user.is_authenticated:
-    #     imagen_model = Avatar.objects.filter(user= request.user.id).order_by("-id")[0]
-    #     imagen_url = imagen_model.imagen.url
-    # else:
-    #     imagen_url = ""
-    # return render(request, "MainApp/index.html", {"imagen_url": imagen_url})
+     if request.user.is_authenticated:
+         imagen_model = Avatar.objects.filter(usuario= request.user.id)[0]
+         imagen_url = imagen_model.imagen.url
+     else:
+         imagen_url = ""
+     return render(request, "MainApp/index.html", {"imagen_url": imagen_url})
 
-    return render(request, "MainApp/index.html")
 
 #<<<<<<< HEAD
 
@@ -60,7 +59,7 @@ def autos_formulario(request):
     return render(request, "MainApp/autos_formulario.html", {"formulario": formulario})
 
 class Autos(LoginRequiredMixin, ListView):
-
+    
     model = Automovil
     template_name = "MainApp/autos.html"
 

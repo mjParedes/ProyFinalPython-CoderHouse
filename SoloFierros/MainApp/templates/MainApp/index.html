@@ -39,18 +39,14 @@
               {% if request.user.is_authenticated %} 
             
             <li>
-              <a class="btn btn-primary" href="{% url 'auth-logout'  %}" style="margin: 0 5px;"> Logout </a>
+              <a class="btn btn-primary" href="#" style="margin: 0 5px 0 10px;"> Mensajes </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
-              <a class="btn btn-primary" href="#" style="margin: 0 5px;"> Mensajes </a>
 
-              <img src="{% static 'MainApp/images/logo-page.png' %}" style="max-width: 50%; height: 50%;" >
-<!--<<<<<<< HEAD -->
-              <!-- <img height="40px" src="{{imagen_url}}" alt=""> -->
-        <!--      <p> Bienvenido {{request.user.username}} !</p>  -->
+              <a class="btn btn-primary" href="{% url 'auth-logout'  %}" style="margin: 0 5px;"> Logout </a>
+              <img src="{{imagen_url}}" style="height: 40px;">
 
- <!--=======-->
               <h5 style="font-size: 12px;"> Bienvenido {{request.user.username}} !</h5>
-<!-- >>>>>>> a2b226bf9fad204fa58485241b254eeb97288e50-->
+
               {% else %}
               <a class="btn btn-primary" href="{% url 'auth-login'  %}"> Login</a>
             </li>

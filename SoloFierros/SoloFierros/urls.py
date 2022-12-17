@@ -24,9 +24,9 @@ urlpatterns = [
     path("", include("MainApp.urls")),
     path('main/', include("MainApp.urls")),
     path("auth/", include("AuthApp.urls")),
-]
+] 
 
 
 
 # Agregar las URLS de archivos estaticos
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
