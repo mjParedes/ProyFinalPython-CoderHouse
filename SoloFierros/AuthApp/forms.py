@@ -28,7 +28,7 @@ class EditarUsuario(UserCreationForm):
     class Meta:
 
         model = User
-        fields = ["username", "first_name", "last_name", "email", "password1", "password2"]
+        fields = [ "first_name", "last_name", "email", "password1", "password2"]
         help_texts = {"email": "Indica un correo electronico que uses habitualmente", "nombre": "", "apellido": "", "password1": ""}
 
 

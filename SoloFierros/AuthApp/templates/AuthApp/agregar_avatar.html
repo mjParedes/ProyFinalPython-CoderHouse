@@ -1,0 +1,18 @@
+{% extends "MainApp/index.html" %}
+
+{% block contenido %}
+
+<form method="post" style="margin-top: 50px;" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Editar">
+
+
+</form>
+
+
+
+{% endblock %}

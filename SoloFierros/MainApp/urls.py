@@ -1,14 +1,12 @@
 from django.urls import path 
 from MainApp.views import *
 
-from django.conf.urls.static import static
-from django.conf import settings
-
 
 urlpatterns = [
     
     path("", vista_inicio, name="inicio"),
     path("about/", vista_nosotros, name="nosotros"),
+    path("sucursales/", Sucursales.as_view(), name="sucursales"),
     
     path("autos/", Autos.as_view(), name="autos"),
     path("autos/detalle/<pk>/", AutosDetail.as_view(), name="autos-detail"),
@@ -24,9 +22,6 @@ urlpatterns = [
     
 
 
-
-
-
     path("buscar/resultados/", resultado_busqueda, name="buscar-resultados"),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 

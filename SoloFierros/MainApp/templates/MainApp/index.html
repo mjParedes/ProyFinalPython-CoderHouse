@@ -41,6 +41,9 @@
             <li>
               <a class="btn btn-primary" href="{% url 'auth-logout'  %}" style="margin: 0 5px;"> Logout </a>
               <a class="btn btn-primary" href="{% url 'auth-editar'  %}"> Perfil </a>
+              <a class="btn btn-primary" href="#" style="margin: 0 5px;"> Mensajes </a>
+
+              <img src="{% static 'MainApp/images/logo-page.png' %}" style="max-width: 50%; height: 50%;" >
 <!--<<<<<<< HEAD -->
               <!-- <img height="40px" src="{{imagen_url}}" alt=""> -->
         <!--      <p> Bienvenido {{request.user.username}} !</p>  -->
@@ -67,8 +70,7 @@
             <li><a href="{% url 'nosotros' %}"><span>nosotros</span></a></li>
             <li><a href="{% url 'autos' %}"><span>autos</span></a></li>
             <li><a href="{% url 'motos' %}"><span>motos</span></a></li>
-            <li><a href=""><span>sucursales</span></a></li>
-            <li><a href="#"><span>trucks</span></a></li>
+            <li><a href="{% url 'sucursales' %}"><span>sucursales</span></a></li>
           </ul>
         </div>
       </div>
@@ -122,7 +124,7 @@
             <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
             <li><a href="{% url 'autos' %}">Autos</a></li>
             <li><a href="{% url 'motos' %}">Motos</a></li>
-            <li class="last"><a href="#">Sitemap</a></li>
+            <li><a href="{% url 'sucursales' %}">Sucursale</a></li>
           </ul>
         </div>
       </div>
