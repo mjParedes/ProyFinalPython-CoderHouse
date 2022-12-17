@@ -19,3 +19,7 @@ Citando un ejemplo, nos dividimos en partes iguales la creacion de modelos, vist
 ## VIDEO CON NAVEGACION DE LA APLICACION WEB
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d164d0f2849312bd7a1a1470c55409520a09cbc0
